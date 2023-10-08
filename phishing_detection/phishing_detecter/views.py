@@ -9,13 +9,14 @@ from django.contrib.auth.models import User
 from rest_framework_simplejwt.tokens import RefreshToken
 from django.views.decorators.csrf import csrf_exempt
 from .classifier import *
-
+from .serializers import *
 
 
 
 # Create your views here.
 from .models import *
 @api_view(['POST'])
+
 @csrf_exempt
 
 def phishing_check(request):
@@ -23,13 +24,19 @@ def phishing_check(request):
 
 
     try:
+        serializer=SubmittedURLSerializer(data=request.data)
+
+        if serializer.is_valid():
+            serializer.save()
         url = request.data.get('url')
         pred=get_prediction_from_url(url)
-        if pred==-1:
-            result='its not safe '
+        if pred == -1:
+            result = 'Phishing Website'
+        elif pred == 0:
+            result ='Suspicious Website'
         else:
-            result='its totally safe'
-
+            result='Legitimate Website'
+        print(result)
         return Response(
             {
                 "success": True,
