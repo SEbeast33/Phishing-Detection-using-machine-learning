@@ -10,6 +10,7 @@ from rest_framework_simplejwt.tokens import RefreshToken
 from django.views.decorators.csrf import csrf_exempt
 from .classifier import *
 from .serializers import *
+from .models import *
 
 
 
@@ -54,3 +55,18 @@ def phishing_check(request):
         }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
+
+@api_view(['GET'])
+@csrf_exempt
+
+def geturls(request):
+    urls= SubmittedURL.objects.all().order_by('-id')[:6]
+    serializer= SubmittedURLSerializer(urls,many=True)
+    return Response(
+        {
+            "success": True,
+            "message": "no error",
+            "url": serializer.data
+        }
+
+    )
