@@ -2,7 +2,7 @@ import numpy as np
 from sklearn.ensemble import RandomForestClassifier
 from .main import *
 # Load and process the dataset
-data = np.genfromtxt('D:/phishing detection project/Phishing-Detection-using-machine-learning/phishing_detection/phishing_detecter/Training Dataset.arff', delimiter=',', skip_header=1)
+data = np.genfromtxt('/media/Training Dataset.arff', delimiter=',', skip_header=1)
 labels = data[:, 30]
 features = data[:, [0, 1, 2, 3, 4, 5, 6, 8, 9, 11, 12, 13, 14, 15, 16, 17, 22, 23, 24, 25, 27, 29]]
 print(features)
