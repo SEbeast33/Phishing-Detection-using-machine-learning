@@ -6,3 +6,6 @@ whois
 google
 gunicorn
 django
+djangorestframework
+djangorestframework-simplejwt
+django-cors-headers
