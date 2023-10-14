@@ -313,7 +313,7 @@ url= 'https://www.flipkart.com/'
 def main(url):
 
 
-    with open('C:/Users/shara/PycharmProjects/testproject/markup.txt', 'r') as file:
+    with open('phishing_detection/media/markup.txt', 'r') as file:
         soup_string = file.read()
 
     soup = BeautifulSoup(soup_string, 'html.parser')
