@@ -1,0 +1,24 @@
+.loader{
+    width: 21.875rem;
+height: 13.5625rem;
+display: flex;
+flex-flow: column wrap;
+margin: 1rem;
+justify-content: center;
+align-items: center;
+
+}
+
+.logo{
+    width: 6.125rem;
+height: 5.75rem;
+}
+.checkingtext{
+    padding-left: 1.4rem;
+    color: rgb(255, 255, 255);
+    font-family: Lato;
+font-size: 1.5625rem;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
