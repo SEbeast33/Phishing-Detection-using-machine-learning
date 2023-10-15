@@ -237,7 +237,7 @@ background-clip: text;
     }
     .searchbar{
         margin-left: 0.2rem;
-        width: 20rem;
+        width: 16rem;
         height: 3.25rem;
     
     }
@@ -250,6 +250,8 @@ background-clip: text;
     }
     .resultcontainer{
         margin-right: 0.8rem;
+        width: 17rem;
+        height: 11rem;
 
     }
     .logo1{
@@ -271,6 +273,11 @@ background-clip: text;
 height: 2.5625rem;
   overflow: scroll;
 
+    }
+    .thumbdown{
+        width: 4rem;
+   
+height: 4rem;
     }
 
 }

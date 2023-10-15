@@ -116,13 +116,15 @@ function App() {
       </div>
      
       {loading?(<Loader/>):
-      <motion.div className='resultcontainer' variants={itemVariants} initial='closed' animate={search?'open':'closed'} >
+       <motion.div  animate={{opacity:ishistoryopen?0:1}} >
+      <motion.div className='resultcontainer' variants={itemVariants} initial='closed' animate={search?'open':'closed'}  >
       <div className="thumbdown">
-       <motion.img src={thumbdowngif} alt=""  animate={{rotateY:[180],rotate:[180]}} />
+       <motion.img src={thumbdowngif} alt=""  animate={{rotateY:result==='Phishing Website'?[0]:[180],rotate:result==='Phishing Website'?[0]:[180]}} />
       </div>
       <div className="text">
         {result}
       </div>
+    </motion.div>
     </motion.div>
       }
       
