@@ -49,7 +49,7 @@ function App() {
     if(updateHistory){
     const fetchDataFromBackend = async () => {
       try {
-        const response1 = await axios.get('http://127.0.0.1:8000/sharad/urls')
+        const response1 = await axios.get('https://safesurf1.onrender.com/sharad/urls')
         const data = await response1.data
         setUrlData(data.url); // Update state with the array of URL data
       } catch (error) {
@@ -67,7 +67,7 @@ function App() {
     e.preventDefault();
     try {
       
-      const response= await axios.post('http://127.0.0.1:8000/sharad/',{"url":urlGiven}, {headers: {
+      const response= await axios.post('https://safesurf1.onrender.com/sharad/',{"url":urlGiven}, {headers: {
         'Content-Type': 'application/json',
       }} )
       
@@ -81,6 +81,7 @@ function App() {
   const handleClickOfHistory = ()=>{
     setIsHistoryopen(!ishistoryopen);
     setUpdateHistory(true);
+
   }
 
 
@@ -105,7 +106,7 @@ function App() {
     <form onSubmit={handleSubmit} className='search' >
       
       <div className="searchcontainer">
-      <motion.input type="text" placeholder='Enter URL' className="searchbar" onChange={(e)=>setUrlGiven(e.target.value)} value={urlGiven} whileFocus={{boxShadow:'0px 1px 15px 5px #C272ED'}}  />
+      <motion.input type="text" placeholder='Enter URL' className="searchbar" onChange={(e)=>setUrlGiven(e.target.value)} value={urlGiven} whileFocus={{boxShadow:'0px 1px 15px 5px #C272ED'}} animate={{opacity:ishistoryopen?0:1}}  />
       
       
       
@@ -129,7 +130,7 @@ function App() {
       
     </form>
 
-    <motion.div className="historycontainer" animate={{opacity:ishistoryopen?1:0}}>
+    <motion.div className="historycontainer" animate={{opacity:ishistoryopen?1:0,zIndex:ishistoryopen?2:0,display:ishistoryopen?"flex":"none"}}>
 
       <div className='closemenu' onClick={()=>{setIsHistoryopen(false)}}>
         <img src={closehumberger} alt="" className='closehum' />
