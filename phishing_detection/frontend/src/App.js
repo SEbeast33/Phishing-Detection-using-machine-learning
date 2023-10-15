@@ -9,6 +9,7 @@ import Loader from './Loader';
 import { useEffect } from 'react';
 import Urlcard from './Urlcard';
 import Header from './Header';
+import Footer from './Footer';
 
 function App() {
 
@@ -110,7 +111,7 @@ function App() {
       
       
       
-      <motion.button type='submit' className='searchbutton' onClick={handleButtonClick }   >
+      <motion.button type='submit' className='searchbutton' onClick={handleButtonClick }  animate={{opacity:ishistoryopen?0:1}}   >
         <img src={searchgif} alt="here is gif" className='searchgif' />
       </motion.button>
       </div>
@@ -131,7 +132,7 @@ function App() {
       
       
     </form>
-
+    
     <motion.div className="historycontainer" animate={{opacity:ishistoryopen?1:0,zIndex:ishistoryopen?2:0,display:ishistoryopen?"flex":"none"}}>
 
       <div className='closemenu' onClick={()=>{setIsHistoryopen(false)}}>
@@ -144,7 +145,9 @@ function App() {
        } 
         
     </motion.div>
+    <Footer/>
    </div>
+   
    </motion.div>
   );
 }
