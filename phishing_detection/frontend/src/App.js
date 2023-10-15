@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css'
 import { useState } from 'react';
 import axios from 'axios'
-import {closehumberger, history, logo1, searchgif} from './Assets/Assets';
+import {back, closehumberger, history, logo1, searchgif} from './Assets/Assets';
 import {thumbdowngif} from './Assets/Assets';
 import { motion } from "framer-motion"
 import Loader from './Loader';
@@ -87,7 +87,7 @@ function App() {
 
  console.log(result)
   return (
-   <div className="wholecontainer">
+   <motion.div className="wholecontainer" >
      <div className='headercontainer'>
       <div className="logo1">
       SafeSurf.
@@ -143,7 +143,7 @@ function App() {
         
     </motion.div>
    </div>
-   </div>
+   </motion.div>
   );
 }
 

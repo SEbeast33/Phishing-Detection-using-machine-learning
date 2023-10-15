@@ -4,5 +4,6 @@ import loading from './loading.gif'
 import closehumberger from './close_humberger.svg'
 import history from './history.gif'
 import logo1 from './logo.svg'
+import back from './back.jpg'
 
-export{searchgif,thumbdowngif,loading,closehumberger,history,logo1}
+export{searchgif,thumbdowngif,loading,closehumberger,history,logo1,back}

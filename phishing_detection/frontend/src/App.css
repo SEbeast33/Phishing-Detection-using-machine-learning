@@ -1,5 +1,5 @@
 .wholecontainer{
-    background: url("D:\phishing detection project\Phishing-Detection-using-machine-learning\phishng_website_frontend\frontend\src\Assets\back.jpg"), lightgray 50% / cover no-repeat;
+    background: url("./Assets/back.jpg"), lightgray 50% / cover no-repeat;
     width: 100%;
     height: 52rem;
 }
