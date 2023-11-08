@@ -56,7 +56,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'phishing_detection.urls'
 
-CORS_ALLOWED_ORIGINS = ["http://localhost:8000","chrome-extension://noegmmaofjpnkfgaaccaneaffbinpkgc","https://safesurf1.onrender.com/sharad/"]
+CORS_ALLOWED_ORIGINS = ["http://localhost:8000","chrome-extension://noegmmaofjpnkfgaaccaneaffbinpkgc","https://safesurf1.onrender.com"]
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = False
 CORS_ALLOW_METHODS = (
