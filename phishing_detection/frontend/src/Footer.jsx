@@ -3,7 +3,7 @@ import './App.css'
 
 const Footer = () => {
   return (
-    <footer className='footercontainer'>© 2023 Sharad Etthar</footer>
+    <footer className='footercontainer'></footer>
   )
 }
 
