@@ -11,6 +11,7 @@ from django.views.decorators.csrf import csrf_exempt
 from .classifier import *
 from .serializers import *
 from .models import *
+import requests
 
 
 
@@ -30,11 +31,18 @@ def phishing_check(request):
         if serializer.is_valid():
             serializer.save()
         url = request.data.get('url')
-        pred=get_prediction_from_url(url)
-        if pred == -1:
+        
+         
+        valid = check_website_existence(url)
+        print(valid)
+          
+        pred = get_prediction_from_url(url)
+        if pred == -1 :
             result = 'Phishing Website'
-        elif pred == 0:
+        elif pred == 0 :
             result ='Suspicious Website'
+        elif valid == False:
+            result = 'not valid'
         else:
             result='Legitimate Website'
         print(result)

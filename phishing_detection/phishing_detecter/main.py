@@ -1,6 +1,4 @@
-# Purpose -
-# Running this file (stand alone) - For extracting all the features from a web page for testing.
-# Notes -
+
 # 1 stands for legitimate
 # 0 stands for suspicious
 # -1 stands for phishing
@@ -13,17 +11,11 @@ import socket
 import whois
 from datetime import datetime
 import time
-
-# https://breakingcode.wordpress.com/2010/06/29/google-search-python/
-# Previous package structure was modified. Import statements according to new structure added. Also code modified.
 from googlesearch import search
 
-# This import is needed only when you run this file in isolation.
 import sys
 
 from .patterns import *
-
-# Path of your local server. Different for different OSs.
 
 
 
@@ -306,8 +298,6 @@ def get_hostname_from_url(url):
             hostname = hostname[:post_pattern_match.start()]
 
     return hostname
-
-# TODO: Put the DNS and domain code into a function.
 
 url= 'https://www.flipkart.com/'
 def main(url):
